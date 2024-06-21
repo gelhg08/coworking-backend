@@ -2,8 +2,9 @@ import { Controller,Get, Post, Body, Param, Delete  } from '@nestjs/common';
 import { SesionesService } from '../services/sesiones.service';
 import { CreateSesionDto } from '../dtos/create-sesiones.dto';
 import { Sesion } from '../sesiones.entity';
+import { ApiTags } from '@nestjs/swagger';
 
-
+@ApiTags('sesiones')
 @Controller('sesiones')
 export class SesionesController {
     constructor(private readonly sesionesService: SesionesService) {}

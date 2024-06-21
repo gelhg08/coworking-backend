@@ -2,8 +2,9 @@ import { Controller, Body, Param, Post, Get, Delete} from '@nestjs/common';
 import { ReservasService } from '../services/reservas.service';
 import { CreateReservaDto } from '../dtos/create-reservas.dto';
 import { Reserva } from '../reservas.entity';
+import { ApiTags } from '@nestjs/swagger';
 
-
+@ApiTags('reservas')
 @Controller('reservas')
 export class ReservasController {
     constructor(private readonly reservasService: ReservasService) {}
