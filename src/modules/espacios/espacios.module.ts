@@ -1,9 +1,12 @@
 import { Module } from '@nestjs/common';
 import { EspaciosController } from './controller/espacios.controller';
-import { EspaciosService } from './services/espacios.service';
+import { EspaciosDeTrabajoService } from './services/espacios.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { EspacioDeTrabajo } from './espacios.entity';
 
 @Module({
+  imports: [TypeOrmModule.forFeature([EspacioDeTrabajo])],
   controllers: [EspaciosController],
-  providers: [EspaciosService]
+  providers: [EspaciosDeTrabajoService]
 })
 export class EspaciosModule {}
