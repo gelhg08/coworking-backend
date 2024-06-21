@@ -1,6 +1,11 @@
 import { Module } from '@nestjs/common';
 import {ConfigModule} from '@nestjs/config'
 import {TypeOrmModule} from '@nestjs/typeorm'
+import { UsersModule } from './modules/users/users.module';
+import { ReservasModule } from './modules/reservas/reservas.module';
+import { SalasModule } from './modules/salas/salas.module';
+import { SesionesModule } from './modules/sesiones/sesiones.module';
+import { EspaciosModule } from './modules/espacios/espacios.module';
 
 @Module({
   imports: [
@@ -18,6 +23,11 @@ import {TypeOrmModule} from '@nestjs/typeorm'
           rejectUnauthorized: false, 
         },
       }),
+      UsersModule,
+      ReservasModule,
+      SalasModule,
+      SesionesModule,
+      EspaciosModule,
   ],
   controllers: [],
   providers: [],
