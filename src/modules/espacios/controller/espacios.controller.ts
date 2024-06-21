@@ -1,8 +1,11 @@
 import { Controller, Get, Post, Body, Param, Delete } from '@nestjs/common';
 import { EspaciosDeTrabajoService } from '../services/espacios.service';
 import { CreateEspacioDeTrabajoDto } from '../dtos/create-espacios.dto';
-import { EspacioDeTrabajo } from '../espacios.entity';;
+import { EspacioDeTrabajo } from '../espacios.entity';
+import { ApiTags } from '@nestjs/swagger';
 
+
+@ApiTags('espacios')
 @Controller('espacios')
 export class EspaciosController {
     constructor(private readonly espaciosDeTrabajoService: EspaciosDeTrabajoService) {}

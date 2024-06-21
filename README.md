@@ -88,7 +88,7 @@ To run the project locally, clone the repository and set up the necessary enviro
    ```
 4. Edit the `.env` file and configure the following values:
    ```
-   POSTGRESQL_ADDON_HOST= tu host
+  POSTGRESQL_ADDON_HOST= tu host
   POSTGRESQL_ADDON_DB= tu database name 
   POSTGRESQL_ADDON_USER= tu usuario
   POSTGRESQL_ADDON_PORT= tu puerto
@@ -114,7 +114,21 @@ npm run build
 npm start
 ```
 
-## Project Folder Structure
+## Documentación de la API con Swagger
+La API está documentada utilizando Swagger/OpenAPI para proporcionar una referencia interactiva de los endpoints disponibles. Para acceder a la documentación:
+
+Despliegue en la Nube:
+
+El Swagger del backend está desplegado en la nube. Puedes acceder a él usando el siguiente enlace:
+https://tu-url-de-swagger
+Asegúrate de tener las credenciales necesarias para acceder si es requerido.
+
+
+Ejecución Local:
+Si estás ejecutando el proyecto localmente, puedes generar la documentación Swagger ejecutando el servidor y visitando la siguiente URL en tu navegador:
+
+http://localhost:puerto/swagger
+Reemplaza puerto con el número de puerto en el que está corriendo tu servidor local.
 
 ## Git Flow estrategia
 Este proyecto implementa la estrategia de ramificación Gitflow, la cual es un modelo escalable y robusto para gestionar el desarrollo de software. A continuación, una breve descripción de cómo se organizan las ramas y su propósito dentro del flujo de trabajo del proyecto:
@@ -128,6 +142,6 @@ Para contribuir al proyecto, crea una rama desde dev siguiendo el prefijo corres
 
 Adoptar Gitflow permite una gestión organizada de versiones, proporcionando claridad y un proceso establecido para la colaboración y el despliegue de software.
 
-¡Disfruta usando AllVibe security!
+¡Disfruta usando este sistema de coworking!
 
 Desarrollado por: Angélica Hernández.
