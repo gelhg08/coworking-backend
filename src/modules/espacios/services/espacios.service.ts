@@ -6,7 +6,7 @@ import { CreateEspacioDeTrabajoDto } from '../dtos/create-espacios.dto';
 
 
 @Injectable()
-export class EspaciosService {
+export class EspaciosDeTrabajoService {
 
     constructor(
         @InjectRepository(EspacioDeTrabajo)
