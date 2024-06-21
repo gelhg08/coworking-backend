@@ -1,7 +1,8 @@
-import { Controller,Get, Post, Body, Param, Delete  } from '@nestjs/common';
+import { Controller,Get, Post, Body, Param, Delete, Put  } from '@nestjs/common';
 import { SesionesService } from '../services/sesiones.service';
 import { CreateSesionDto } from '../dtos/create-sesiones.dto';
 import { Sesion } from '../sesiones.entity';
+import { UpdateSesionDto } from '../dtos/update-sesiones.dto';
 import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags('sesiones')
@@ -22,6 +23,11 @@ export class SesionesController {
   @Get(':id')
   findOne(@Param('id') id: string): Promise<Sesion> {
     return this.sesionesService.findOne(+id);
+  }
+
+  @Put(':id')
+  update(@Param('id') id: string, @Body() updateSesionDto: UpdateSesionDto): Promise<Sesion> {
+    return this.sesionesService.update(+id, updateSesionDto);
   }
 
   @Delete(':id')

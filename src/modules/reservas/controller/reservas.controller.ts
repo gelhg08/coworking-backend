@@ -1,7 +1,8 @@
-import { Controller, Body, Param, Post, Get, Delete} from '@nestjs/common';
+import { Controller, Body, Param, Post, Get, Delete, Put} from '@nestjs/common';
 import { ReservasService } from '../services/reservas.service';
 import { CreateReservaDto } from '../dtos/create-reservas.dto';
 import { Reserva } from '../reservas.entity';
+import { UpdateReservaDto } from '../dtos/update-reservas.dto';
 import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags('reservas')
@@ -22,6 +23,11 @@ export class ReservasController {
   @Get(':id')
   findOne(@Param('id') id: string): Promise<Reserva> {
     return this.reservasService.findOne(+id);
+  }
+
+  @Put(':id')
+  update(@Param('id') id: string, @Body() updateReservaDto: UpdateReservaDto): Promise<Reserva> {
+    return this.reservasService.update(+id, updateReservaDto);
   }
 
   @Delete(':id')

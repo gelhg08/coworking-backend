@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Body, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common';
 import { EspaciosDeTrabajoService } from '../services/espacios.service';
 import { CreateEspacioDeTrabajoDto } from '../dtos/create-espacios.dto';
 import { EspacioDeTrabajo } from '../espacios.entity';
+import { UpdateEspacioDeTrabajoDto } from '../dtos/update-espacios.dto';
 import { ApiTags } from '@nestjs/swagger';
 
 
@@ -23,6 +24,11 @@ export class EspaciosController {
   @Get(':id')
   findOne(@Param('id') id: string): Promise<EspacioDeTrabajo> {
     return this.espaciosDeTrabajoService.findOne(+id);
+  }
+
+  @Put(':id')
+  update(@Param('id') id: string, @Body() updateEspacioDeTrabajoDto: UpdateEspacioDeTrabajoDto): Promise<EspacioDeTrabajo> {
+    return this.espaciosDeTrabajoService.update(+id, updateEspacioDeTrabajoDto);
   }
 
   @Delete(':id')
