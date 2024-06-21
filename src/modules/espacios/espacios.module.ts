@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { EspaciosController } from './espacios.controller';
+import { EspaciosController } from './controller/espacios.controller';
 import { EspaciosService } from './services/espacios.service';
 
 @Module({

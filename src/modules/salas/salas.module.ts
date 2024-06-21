@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { SalasController } from './salas.controller';
+import { SalasController } from './controller/salas.controller';
 import { SalasService } from './serivces/salas.service';
 
 @Module({
